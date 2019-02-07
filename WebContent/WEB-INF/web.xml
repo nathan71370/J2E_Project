@@ -9,4 +9,14 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
+	
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>fr.project_j2ee.filter.LoginFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 </web-app>
