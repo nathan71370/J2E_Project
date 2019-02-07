@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.project_j2ee.models.User;
+import fr.project_j2ee.entity.User;
 
 
 
