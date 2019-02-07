@@ -67,6 +67,8 @@
           </p>
         </div>
       </section>
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit" method="POST">Log Out</button>
 
       <div class="album py-5 bg-light">
         <div class="container">
