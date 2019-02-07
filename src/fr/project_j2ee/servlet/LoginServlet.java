@@ -17,8 +17,7 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("Login doGet");
 		
-		PrintWriter out = resp.getWriter();
-		out.println("<html><body><h1>Hello world!</h1></body></html>");
+		req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, resp);
 	}
 
 	@Override
