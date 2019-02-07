@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.project_j2ee.models.User;
+
+
 
 public class LoginServlet extends HttpServlet {
 	
@@ -24,5 +27,16 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("Login doPost");
+		
+		String username = req.getParameter("username");
+		String password = req.getParameter("password");
+		
+		if(username.equals("nathan") && password.equals("ledieu")) {
+			req.getSession().setAttribute("user", new User(username, password));
+			resp.sendRedirect("index");
+		}
+		else {
+			resp.sendRedirect("login");
+		}
 	}
 }
