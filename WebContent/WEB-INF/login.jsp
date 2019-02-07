@@ -19,9 +19,8 @@
       }
     </style>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
-    <title>SupPictures</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -33,8 +32,8 @@
           font-size: 3.5rem;
         }
       }
-      
-tml, body {
+      html,
+body {
   height: 100%;
 }
 
@@ -67,17 +66,20 @@ body {
 .form-signin .form-control:focus {
   z-index: 2;
 }
-.form-signin {
+.form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin {
+.form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+     
     </style>
+
+    <title>SupPictures</title>
   </head>
   <body>
     <!-- Optional JavaScript -->
@@ -86,11 +88,11 @@ body {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="./assets/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     
-    <form class="form-signin">
-  		<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  		<input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-  		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-	</form>	
+    <form class="form-signin" method="POST">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
   </body>
 </html>
