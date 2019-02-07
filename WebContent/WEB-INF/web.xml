@@ -19,6 +19,24 @@
 		<url-pattern>/index</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>fr.project_j2ee.servlet.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>fr.project_j2ee.servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>  
+	
 	<filter>
 		<filter-name>LoginFilter</filter-name>
 		<filter-class>fr.project_j2ee.filter.LoginFilter</filter-class>
