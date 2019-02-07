@@ -33,8 +33,8 @@
           font-size: 3.5rem;
         }
       }
-      html,
-body {
+      
+tml, body {
   height: 100%;
 }
 
@@ -67,12 +67,12 @@ body {
 .form-signin .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="email"] {
+.form-signin {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="password"] {
+.form-signin {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -87,13 +87,10 @@ body {
     <script src="./assets/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     
     <form class="form-signin">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-</form>
+  		<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  		<input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+  		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	</form>	
   </body>
 </html>
