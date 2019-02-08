@@ -35,4 +35,12 @@ public interface DaoPictures {
      * @return The {@link Pictures} object if found.
      */
     Pictures findById(Long id);
+
+    /**
+     * Method used for update users to database.
+     *
+     * @param user Of type {@link Pictures}
+     * @return The saved {@link Pictures}
+     */
+	Pictures updatePictures(Pictures pictures);
 }
