@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		
-		if(DaoFactory.getDaoUsers().getUsers(username, password)){
+		if(DaoFactory.getDaoUsers().getUsers(username).equals(username)){
 			resp.sendRedirect("login");
 		}
 		else {

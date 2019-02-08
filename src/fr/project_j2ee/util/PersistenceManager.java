@@ -12,7 +12,7 @@ public class PersistenceManager {
 
     public static EntityManagerFactory getEntityManagerFactory() {
         if (emf == null) {
-            emf = Persistence.createEntityManagerFactory("SupCommercePU");
+            emf = Persistence.createEntityManagerFactory("project-j2ePU");
         }
         return emf;
     }
