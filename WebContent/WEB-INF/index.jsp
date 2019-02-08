@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-    <%@ page import ="fr.project_j2ee.models.*" %>
-    <%
-    	User user = (User) request.getSession().getAttribute("user");
-    	if(user == null){
-    		response.sendRedirect("login");
-    	}
-    	
-    %>
+
 <!DOCTYPE html>
 <html>
 <head>
