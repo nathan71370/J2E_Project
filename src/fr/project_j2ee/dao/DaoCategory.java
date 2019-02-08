@@ -29,5 +29,11 @@ public interface DaoCategory {
      */
     Category findById(Long id);
 
+    /**
+     * Method used for update users to database.
+     *
+     * @param user Of type {@link Category}
+     * @return The saved {@link Category}
+     */
     Category updateCategory(Category category);
 }
