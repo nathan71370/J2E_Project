@@ -1,5 +1,7 @@
 package fr.project_j2ee.entity;
 
+import java.util.List;
+
 public class User {
 
 	private Long id;
@@ -11,17 +13,10 @@ public class User {
 	private String email;
 	private String adresse;
 	private Boolean estAdmin;
+	private List<Picture> picture;
 	
-	public User(Long id, String username, String password, String firstName, String lastName, String phone, String email, String adresse, Boolean estAdmin) {
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.phone = phone;
-		this.email = email;
-		this.adresse = adresse;
-		this.estAdmin = estAdmin;
+	public User() {
+		
 	}
 	
 	public User(String username, String password) {
@@ -41,7 +36,6 @@ public class User {
 		return password;
 	}
 	
-	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -59,11 +53,15 @@ public class User {
 	}
 	
 	public String getAdresse() {
-		return email;
+		return adresse;
 	}
 	
 	public Boolean getAdmin() {
 		return estAdmin;
+	}
+	
+	public List<Picture> getPicture() {
+		return picture;
 	}
 	
 	public void setID(Long id) {
@@ -101,4 +99,8 @@ public class User {
 	public void setAdmin(Boolean estAdmin) {
 		this.estAdmin = estAdmin;
 	}
+
+	public void setPicture(List<Picture> picture) {
+        this.picture = picture;
+    }
 }
