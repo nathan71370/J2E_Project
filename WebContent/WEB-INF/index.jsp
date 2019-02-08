@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%@ page import ="fr.project_j2ee.models.*" %>
+    <%
+    	User user = (User) request.getSession().getAttribute("user");
+    	if(user == null){
+    		response.sendRedirect("login");
+    	}
+    	
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,8 +37,8 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
-              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+              <h4 class="text-white">Qu'est-ce SupPictures</h4>
+              <p class="text-muted">SupPictures est un site, dans lequel vous pouvez observer les photos et ses détails, d'une personne déjà inscrite sur SupPicture et ayant déjà ajoutée des photos.</p>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">Contact</h4>
@@ -68,7 +77,7 @@
         </div>
       </section>
       
-      <button class="btn btn-lg btn-primary btn-block" type="submit" method="POST">Log Out</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Log Out</button>
 
       <div class="album py-5 bg-light">
         <div class="container">
