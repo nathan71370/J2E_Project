@@ -1,12 +1,25 @@
 package fr.project_j2ee.entity;
 
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.List;
 
-public class Category {
+@SuppressWarnings("serial")
+@Entity
+@Table(name = "CATEGORIES")
+@NamedQueries({
+        @NamedQuery(name = "GetAllCategories", query = "select c from Category c")
+})
+@XmlRootElement
+public class Category implements Serializable{
 	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
-	private List<Picture> picture;
+	@OneToMany(mappedBy = "category")
+	private List<Pictures> pictures;
 	
 	public Category() {
 		
@@ -20,8 +33,8 @@ public class Category {
 		return name;
 	}
 	
-	public List<Picture> getPicture() {
-		return picture;
+	public List<Pictures> getPictures() {
+		return pictures;
 	}
 	
 	public void setId(Long id) {
@@ -32,7 +45,7 @@ public class Category {
         this.name = name;
     }
 	
-	public void setPicture(List<Picture> picture) {
-        this.picture = picture;
+	public void setPicture(List<Pictures> pictures) {
+        this.pictures = pictures;
     }
 }
