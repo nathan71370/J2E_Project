@@ -40,7 +40,7 @@ public interface DaoUsers {
      *
      * @return A {@link true} or {@link false} of {@link Users}
      */
-    Boolean getUsers(String username, String password);
+    Users getUsers(String username);
     
     /**
      * This method gets a {@link Users} using it's technical identifier

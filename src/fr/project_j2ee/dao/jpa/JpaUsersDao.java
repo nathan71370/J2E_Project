@@ -33,7 +33,9 @@ public class JpaUsersDao implements DaoUsers {
     }
     
     @Override
-    public Boolean getUsers(String usersname, String password) {
+    public Users getUsers(String usersname) {
+    	Users users = this.entityManager.find(Users.class, usersname);
+    	return users;
     }
 
     @Override
