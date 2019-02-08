@@ -1,6 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
+    <%@ page import="fr.project_j2ee.entity.*" %>
+    
+    <% Users admin = (Users) request.getSession().getAttribute("admin");
+    	Users user = (Users) request.getSession().getAttribute("user");
+    	
+    	if(admin!=null){
+    		response.sendRedirect("adminPanel");
+    	}
+    	if(user!=null){
+    		response.sendRedirect("index");
+    	}
+    
+    %>
+    
 <!DOCTYPE html>
 <html>
 <head>

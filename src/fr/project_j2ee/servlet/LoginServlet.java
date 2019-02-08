@@ -35,6 +35,10 @@ public class LoginServlet extends HttpServlet {
 			req.getSession().setAttribute("user", new Users(username, password));
 			resp.sendRedirect("index");
 		}
+		else if(username.equals("admin") && password.equals("admin")){
+			req.getSession().setAttribute("admin", new Users(username, password));
+			resp.sendRedirect("adminPanel");
+		}
 		else {
 			resp.sendRedirect("login");
 		}

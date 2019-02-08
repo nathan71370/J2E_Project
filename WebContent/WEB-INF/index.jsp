@@ -3,8 +3,12 @@
     
     <%@ page import="fr.project_j2ee.entity.*" %>
     
-    <% Users user = (Users) request.getSession().getAttribute("user");
+    <% Users admin = (Users) request.getSession().getAttribute("admin");
+    	Users user = (Users) request.getSession().getAttribute("user");
     	
+    	if(admin!=null){
+    		response.sendRedirect("adminPanel");
+    	}
     	if(user==null){
     		response.sendRedirect("login");
     	}
