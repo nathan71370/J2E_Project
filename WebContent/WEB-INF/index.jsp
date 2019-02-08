@@ -3,7 +3,7 @@
     
     <%@ page import="fr.project_j2ee.entity.*" %>
     
-    <%Users user = (Users) request.getSession().getAttribute("user");
+    <% Users user = (Users) request.getSession().getAttribute("user");
     	
     	if(user==null){
     		response.sendRedirect("login");
