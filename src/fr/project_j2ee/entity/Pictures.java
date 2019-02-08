@@ -1,17 +1,31 @@
 package fr.project_j2ee.entity;
 
 import java.util.Date;
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+import javax.xml.bind.annotation.XmlTransient;
 
-public class Picture {
+@SuppressWarnings("serial")
+@Entity
+@Table (name = "PICTURES")
+@NamedQueries({
+	@NamedQuery(name = "GetAllPictures", query = "SELECT p from Pictures p")
+})
+@XmlRootElement
+public class Pictures implements Serializable{
 	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String description;
 	private String fileUser;
 	private Date datePublish;
+	@ManyToOne
 	private Category category;
 	
-	public Picture () {
+	public Pictures () {
 		
 	}
 	
@@ -35,6 +49,7 @@ public class Picture {
 		return datePublish;
 	}
 	
+	@XmlTransient
 	public Category getCategory() {
 		return category;
 	}
@@ -60,13 +75,13 @@ public class Picture {
 	}
 	
 	public String toXml() {
-        return "<product>\n" +
+        return "<picture>\n" +
                 "        <id>" + this.id + "</id>\n" +
                 "        <name>" + this.name + "</name>\n" +
                 "        <description>" + this.description + "</description>\n" +
                 "        <fileUser>" + this.fileUser + "</fileUser>\n" +
                 "        <datePublish>" + this.datePublish + "</datePublish>\n" +
-                "    </product>\n";
+                "    </pictures>\n";
     }
 
     public String toJson() {
