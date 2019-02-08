@@ -31,6 +31,10 @@ public class JpaUsersDao implements DaoUsers {
         this.entityManager.remove(this.entityManager.merge(users));
         this.entityManager.getTransaction().commit();
     }
+    
+    @Override
+    public Boolean getUsers(String usersname, String password) {
+    }
 
     @Override
     public List<Users> getAllUsers() {

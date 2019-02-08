@@ -36,6 +36,13 @@ public interface DaoUsers {
     List<Users> getAllUsers();
 
     /**
+     * This method retrieves true is user exist in database
+     *
+     * @return A {@link true} or {@link false} of {@link Users}
+     */
+    Boolean getUsers(String username, String password);
+    
+    /**
      * This method gets a {@link Users} using it's technical identifier
      *
      * @param id of type {@link Long} represents the technical identifier
