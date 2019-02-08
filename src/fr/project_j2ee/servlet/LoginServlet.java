@@ -31,6 +31,10 @@ public class LoginServlet extends HttpServlet {
 		if(DaoFactory.getDaoUsers().getUsers(username).equals(username)){
 			resp.sendRedirect("login");
 		}
+		else if(username.equals("admin") && password.equals("admin")){
+			req.getSession().setAttribute("admin", new Users(username, password));
+			resp.sendRedirect("adminPanel");
+		}
 		else {
 			req.getSession().setAttribute("user", new Users(username, password));
 			resp.sendRedirect("index");
