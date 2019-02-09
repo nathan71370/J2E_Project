@@ -38,12 +38,19 @@
     <title>SupPictures</title>
   </head>
   <body>
+  
+  
+  
     <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
         <div class="wrapper wrapper--w780">
             <div class="card card-3">
                 <div class="card-heading">
+                <img src="<%=getServletContext().getContextPath()%>/bg-heading-03.jpg"/>
                 <img src="<%=getServletContext().getContextPath()%>images/bg-heading-03.jpg"/>
-                	
+                <img src="<%=request.getContextPath() %>/WebContent/images/bg-heading-03.jpg"/>
+
+                	<p><%=request.getContextPath() %></p>
+                	<p><%=getServletContext().getContextPath()%></p>
                 	
                 	
                 </div>
