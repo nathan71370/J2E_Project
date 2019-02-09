@@ -1,15 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%@ page import="fr.project_j2ee.entity.*" %>
+    
+    <% Users admin = (Users) request.getSession().getAttribute("admin");
+    	Users user = (Users) request.getSession().getAttribute("user");
+    	
+    	if(admin!=null){
+    		response.sendRedirect("adminPanel");
+    	}
+    	if(user!=null){
+    		response.sendRedirect("index");
+    	}
+    
+    %>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<<<<<<< HEAD
-<title>Insert title here</title>
-</head>
-<body>
 
-=======
 <title>SupPicture Register</title>
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -50,7 +60,5 @@
             </div>
         </div>
     </div>
-
->>>>>>> devCharles
 </body>
 </html>

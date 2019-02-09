@@ -1,5 +1,22 @@
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    <%@ page import="fr.project_j2ee.entity.*" %>
+    
+    <% Users admin = (Users) request.getSession().getAttribute("admin");
+    	Users user = (Users) request.getSession().getAttribute("user");
+    	
+    	if(admin!=null){
+    		response.sendRedirect("adminPanel");
+    	}
+    	if(user!=null){
+    		response.sendRedirect("index");
+    	}
+    
+    %>
+    
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,7 +34,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
 
     <title>SupPictures</title>
   </head>

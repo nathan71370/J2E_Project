@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.project_j2ee.entity.User;
+import fr.project_j2ee.dao.DaoFactory;
+import fr.project_j2ee.entity.Users;
 
 
 
@@ -18,25 +19,25 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Login doGet");
-		
 		req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Login doPost");
-		
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		
-		if(username.equals("nathan") && password.equals("ledieu")) {
-			req.getSession().setAttribute("user", new User(username, password));
-			resp.sendRedirect("index");
+		if(DaoFactory.getDaoUsers().getUsers(username).equals(username)){
+			resp.sendRedirect("login");
+		}
+		else if(username.equals("admin") && password.equals("admin")){
+			req.getSession().setAttribute("admin", new Users(username, password));
+			resp.sendRedirect("adminPanel");
 		}
 		else {
-			resp.sendRedirect("login");
+			req.getSession().setAttribute("user", new Users(username, password));
+			resp.sendRedirect("index");
 		}
 	}
 }

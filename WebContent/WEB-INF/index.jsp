@@ -1,6 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
+    
+    <%@ page import="fr.project_j2ee.entity.*" %>
+    
+    <% Users admin = (Users) request.getSession().getAttribute("admin");
+    	Users user = (Users) request.getSession().getAttribute("user");
+    	
+    	if(admin!=null){
+    		response.sendRedirect("adminPanel");
+    	}
+    	if(user==null){
+    		response.sendRedirect("login");
+    	}
+    
+    %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +44,7 @@
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
               <h4 class="text-white">Qu'est-ce SupPictures</h4>
-              <p class="text-muted">SupPictures est un site, dans lequel vous pouvez observer les photos et ses détails, d'une personne déjà inscrite sur SupPicture et ayant déjà ajoutée des photos.</p>
+              <p class="text-muted">SupPictures est un site, dans lequel vous pouvez observer les photos et ses dï¿½tails, d'une personne dï¿½jï¿½ inscrite sur SupPicture et ayant dï¿½jï¿½ ajoutï¿½e des photos.</p>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">Contact</h4>

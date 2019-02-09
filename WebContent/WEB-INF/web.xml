@@ -35,7 +35,25 @@
 	<servlet-mapping>
 		<servlet-name>LogoutServlet</servlet-name>
 		<url-pattern>/logout</url-pattern>
-	</servlet-mapping>  
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AdminPanelServlet</servlet-name>
+		<servlet-class>fr.project_j2ee.servlet.AdminPanelServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminPanelServlet</servlet-name>
+		<url-pattern>/adminPanel</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>pitureDetailsServlet</servlet-name>
+		<servlet-class>fr.project_j2ee.servlet.pitureDetailsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pitureDetailsServlet</servlet-name>
+		<url-pattern>/pitureDetails</url-pattern>
+	</servlet-mapping>
 	
 	<filter>
 		<filter-name>LoginFilter</filter-name>
